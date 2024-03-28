@@ -16,30 +16,30 @@ const AppMenu = () => {
             items: [{ label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/' }]
         },
         {
-            label: 'TEST',
+            label: '고등어 정보',
             items: [
-                { label: '테스트', icon: 'pi pi-fw pi-id-card', to: '/test' },
-                { label: 'empty test', icon: 'pi pi-fw pi-check-square', to: '/pages/empty2' },
+                { label: '고등어 ', icon: 'pi pi-fw pi-id-card', to: '/test' },
+                { label: 'Ocean News', icon: 'pi pi-fw pi-check-square', to: '/pages/empty' },
             ]
         },
         {
-            label: 'UI Components',
+            label: '요인',
             items: [
-                { label: 'Form Layout', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-                { label: 'Input', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
-                { label: 'Float Label', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
-                { label: 'Invalid State', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
-                { label: 'Button', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
-                { label: 'Table', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
-                { label: 'List', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
-                { label: 'Tree', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
+                { label: '오늘의 바다', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
+                { label: '풍량', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
+                { label: '풍속', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
+                { label: '수출', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
+                { label: '수입', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
+                { label: '가격변동', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
+                { label: '고등어 구입 페이지', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
+                { label: '오늘의 바다', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
                 { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
                 { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/uikit/overlay' },
                 { label: 'Media', icon: 'pi pi-fw pi-image', to: '/uikit/media' },
                 { label: 'Menu', icon: 'pi pi-fw pi-bars', to: '/uikit/menu', preventExact: true },
                 { label: 'Message', icon: 'pi pi-fw pi-comment', to: '/uikit/message' },
                 { label: 'File', icon: 'pi pi-fw pi-file', to: '/uikit/file' },
-                { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' },
+                { label: '고등어 차트', icon: 'pi pi-fw pi-chart-bar', to: '/uikit/charts' },
                 { label: 'Misc', icon: 'pi pi-fw pi-circle', to: '/uikit/misc' }
             ]
         },
