@@ -1,0 +1,23 @@
+{
+    "data":[
+
+        {"name":"환경부 국립환경과학원_시간단위 수온관측 자료",
+        "description":"국립환경과학원 실시간수질정보시스템을 통해 관리되는 수질자동측정망 중 요청한 도개 측정소의 2012-2014년 시간단위 수온 측정자료",
+        "url":"https://www.data.go.kr/data/15049236/fileData.do",
+        "keywords":["실시간수질정보시스템,수온,도개"],
+        "license":"https://data.go.kr/ugs/selectPortalPolicyView.do",
+        "dateCreated":"2019-09-16",
+        "dateModified":"2022-07-14",
+        "datePublished":"2019-09-16",
+        "creator":{"name":"환경부 국립환경과학원",
+        "contactPoint":{"contactType":"물환경평가연구과",
+        "telephone":"+82-0325607446",
+        "@type":"ContactPoint"},
+        "@type":"Organization"},
+        "distribution":[{"encodingFormat":"CSV",
+        "contentUrl":"https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000002571177&fileDetailSn=1&insertDataPrcus=N",
+        "@type":"DataDownload"}],
+        "@context":"https://schema.org",
+        "@type":"Dataset"}
+    ]
+}

@@ -12,6 +12,7 @@ interface DropdownItem {
     code: string;
 }
 
+
 const FormLayoutDemo = () => {
     const [dropdownItem, setDropdownItem] = useState<DropdownItem | null>(null);
     const dropdownItems: DropdownItem[] = useMemo(
@@ -29,120 +30,44 @@ const FormLayoutDemo = () => {
 
     return (
         <div className="grid">
-            <div className="col-12 md:col-6">
+            <div className="col-20 md:col-10">
                 <div className="card p-fluid">
-                    <h5>Vertical</h5>
-                    <div className="field">
-                        <label htmlFor="name1">Name</label>
-                        <InputText id="name1" type="text" />
+                    <h2>오늘의 날씨</h2>
+                    <div className="field" >
+                        <label htmlFor="name1">날씨</label>
+                       <div style={{ fontSize: '24px' }}>맑음⛅</div>
                     </div>
                     <div className="field">
-                        <label htmlFor="email1">Email</label>
-                        <InputText id="email1" type="text" />
+                        <label htmlFor="email1">강수량</label>
+                        <div style={{ fontSize: '24px' }}>1.5mm☔</div>
                     </div>
                     <div className="field">
-                        <label htmlFor="age1">Age</label>
-                        <InputText id="age1" type="text" />
+                        <label htmlFor="age1">풍속</label>
+                        <div style={{ fontSize: '24px' }}>서남서 2.8m/s🌀</div>
+                    </div>
+                    <div className="field">
+                        <label htmlFor="age1">기온(체감)</label>
+                       <div style={{ fontSize: '24px' }}>9.7℃(8.3℃)🌡</div>
                     </div>
                 </div>
 
                 <div className="card p-fluid">
-                    <h5>Vertical Grid</h5>
+                    <h4>ocean</h4>
                     <div className="formgrid grid">
                         <div className="field col">
-                            <label htmlFor="name2">Name</label>
-                            <InputText id="name2" type="text" />
+                            <label htmlFor="name2">수온</label>
+                            <div style={{ fontSize: '24px' }}>13.2 ℃⛱</div>
                         </div>
                         <div className="field col">
-                            <label htmlFor="email2">Email</label>
-                            <InputText id="email2" type="text" />
+                            <label htmlFor="email2">파고</label>
+                            <div style={{ fontSize: '24px' }}>1~2.5 m 🌊</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="col-12 md:col-6">
-                <div className="card p-fluid">
-                    <h5>Horizontal</h5>
-                    <div className="field grid">
-                        <label htmlFor="name3" className="col-12 mb-2 md:col-2 md:mb-0">
-                            Name
-                        </label>
-                        <div className="col-12 md:col-10">
-                            <InputText id="name3" type="text" />
-                        </div>
+           
                     </div>
-                    <div className="field grid">
-                        <label htmlFor="email3" className="col-12 mb-2 md:col-2 md:mb-0">
-                            Email
-                        </label>
-                        <div className="col-12 md:col-10">
-                            <InputText id="email3" type="text" />
-                        </div>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <h5>Inline</h5>
-                    <div className="formgroup-inline">
-                        <div className="field">
-                            <label htmlFor="firstname1" className="p-sr-only">
-                                Firstname
-                            </label>
-                            <InputText id="firstname1" type="text" placeholder="Firstname" />
-                        </div>
-                        <div className="field">
-                            <label htmlFor="lastname1" className="p-sr-only">
-                                Lastname
-                            </label>
-                            <InputText id="lastname1" type="text" placeholder="Lastname" />
-                        </div>
-                        <Button label="Submit"></Button>
-                    </div>
-                </div>
-
-                <div className="card">
-                    <h5>Help Text</h5>
-                    <div className="field p-fluid">
-                        <label htmlFor="username">Username</label>
-                        <InputText id="username" type="text" />
-                        <small>Enter your username to reset your password.</small>
-                    </div>
-                </div>
-            </div>
-
-            <div className="col-12">
-                <div className="card">
-                    <h5>Advanced</h5>
-                    <div className="p-fluid formgrid grid">
-                        <div className="field col-12 md:col-6">
-                            <label htmlFor="firstname2">Firstname</label>
-                            <InputText id="firstname2" type="text" />
-                        </div>
-                        <div className="field col-12 md:col-6">
-                            <label htmlFor="lastname2">Lastname</label>
-                            <InputText id="lastname2" type="text" />
-                        </div>
-                        <div className="field col-12">
-                            <label htmlFor="address">Address</label>
-                            <InputTextarea id="address" rows={4} />
-                        </div>
-                        <div className="field col-12 md:col-6">
-                            <label htmlFor="city">City</label>
-                            <InputText id="city" type="text" />
-                        </div>
-                        <div className="field col-12 md:col-3">
-                            <label htmlFor="state">State</label>
-                            <Dropdown id="state" value={dropdownItem} onChange={(e) => setDropdownItem(e.value)} options={dropdownItems} optionLabel="name" placeholder="Select One"></Dropdown>
-                        </div>
-                        <div className="field col-12 md:col-3">
-                            <label htmlFor="zip">Zip</label>
-                            <InputText id="zip" type="text" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     );
 };
 
