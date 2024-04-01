@@ -360,103 +360,16 @@ const TableDemo = () => {
     const header1 = renderHeader1();
 
     return (
-        <div className="grid">
-            <div className="col-12">
-                <div className="card">
-                    <h5>Filter Menu</h5>
-                    <DataTable
-                        value={customers1}
-                        paginator
-                        className="p-datatable-gridlines"
-                        showGridlines
-                        rows={10}
-                        dataKey="id"
-                        filters={filters1}
-                        filterDisplay="menu"
-                        loading={loading1}
-                        responsiveLayout="scroll"
-                        emptyMessage="No customers found."
-                        header={header1}
-                    >
-                        <Column field="name" header="Name" filter filterPlaceholder="Search by name" style={{ minWidth: '12rem' }} />
-                        <Column header="Country" filterField="country.name" style={{ minWidth: '12rem' }} body={countryBodyTemplate} filter filterPlaceholder="Search by country" filterClear={filterClearTemplate} filterApply={filterApplyTemplate} />
-                        <Column
-                            header="Agent"
-                            filterField="representative"
-                            showFilterMatchModes={false}
-                            filterMenuStyle={{ width: '14rem' }}
-                            style={{ minWidth: '14rem' }}
-                            body={representativeBodyTemplate}
-                            filter
-                            filterElement={representativeFilterTemplate}
-                        />
-                        <Column header="Date" filterField="date" dataType="date" style={{ minWidth: '10rem' }} body={dateBodyTemplate} filter filterElement={dateFilterTemplate} />
-                        <Column header="Balance" filterField="balance" dataType="numeric" style={{ minWidth: '10rem' }} body={balanceBodyTemplate} filter filterElement={balanceFilterTemplate} />
-                        <Column field="status" header="Status" filterMenuStyle={{ width: '14rem' }} style={{ minWidth: '12rem' }} body={statusBodyTemplate} filter filterElement={statusFilterTemplate} />
-                        <Column field="activity" header="Activity" showFilterMatchModes={false} style={{ minWidth: '12rem' }} body={activityBodyTemplate} filter filterElement={activityFilterTemplate} />
-                        <Column field="verified" header="Verified" dataType="boolean" bodyClassName="text-center" style={{ minWidth: '8rem' }} body={verifiedBodyTemplate} filter filterElement={verifiedFilterTemplate} />
-                    </DataTable>
-                </div>
+        <div className="col-12">
+        <div className="card mb-0"  style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
+            <div className="flex justify-content-between mb-3">                
+                <div style={{width: '100%'}}>
+                <a href="https://public.tableau.com/app/profile/.82985567/viz/_17116769933280/2023?publish=yes">
+                    <img src="/layout/images/themes/지역별 고등어 생산량.png" alt="지역별 고등어 생산량" style={{ width: '100%', maxHeight: '100%', borderRadius: '10px' }} />
+                </a>    
+                </div>         
             </div>
-
-            <div className="col-12">
-                <div className="card">
-                    <h5>Frozen Columns</h5>
-                    <ToggleButton checked={idFrozen} onChange={(e) => setIdFrozen(e.value)} onIcon="pi pi-lock" offIcon="pi pi-lock-open" onLabel="Unfreeze Id" offLabel="Freeze Id" style={{ width: '10rem' }} />
-
-                    <DataTable value={customers2} scrollable scrollHeight="400px" loading={loading2} className="mt-3">
-                        <Column field="name" header="Name" style={{ flexGrow: 1, flexBasis: '160px' }} frozen className="font-bold"></Column>
-                        <Column field="id" header="Id" style={{ flexGrow: 1, flexBasis: '100px' }} frozen={idFrozen} alignFrozen="left" bodyClassName={classNames({ 'font-bold': idFrozen })}></Column>
-                        <Column field="country.name" header="Country" style={{ flexGrow: 1, flexBasis: '200px' }} body={countryBodyTemplate}></Column>
-                        <Column field="date" header="Date" style={{ flexGrow: 1, flexBasis: '200px' }} body={dateBodyTemplate}></Column>
-                        <Column field="company" header="Company" style={{ flexGrow: 1, flexBasis: '200px' }}></Column>
-                        <Column field="status" header="Status" style={{ flexGrow: 1, flexBasis: '200px' }} body={statusBodyTemplate}></Column>
-                        <Column field="activity" header="Activity" style={{ flexGrow: 1, flexBasis: '200px' }}></Column>
-                        <Column field="representative.name" header="Representative" style={{ flexGrow: 1, flexBasis: '200px' }} body={representativeBodyTemplate}></Column>
-                        <Column field="balance" header="Balance" body={balanceTemplate} frozen style={{ flexGrow: 1, flexBasis: '120px' }} className="font-bold" alignFrozen="right"></Column>
-                    </DataTable>
-                </div>
-            </div>
-
-            <div className="col-12">
-                <div className="card">
-                    <h5>Row Expand</h5>
-                    <DataTable value={products} expandedRows={expandedRows} onRowToggle={(e) => setExpandedRows(e.data)} responsiveLayout="scroll" rowExpansionTemplate={rowExpansionTemplate} dataKey="id" header={header}>
-                        <Column expander style={{ width: '3em' }} />
-                        <Column field="name" header="Name" sortable />
-                        <Column header="Image" body={imageBodyTemplate} />
-                        <Column field="price" header="Price" sortable body={priceBodyTemplate} />
-                        <Column field="category" header="Category" sortable />
-                        <Column field="rating" header="Reviews" sortable body={ratingBodyTemplate} />
-                        <Column field="inventoryStatus" header="Status" sortable body={statusBodyTemplate2} />
-                    </DataTable>
-                </div>
-            </div>
-
-            <div className="col-12">
-                <div className="card">
-                    <h5>Subheader Grouping</h5>
-                    <DataTable
-                        value={customers3}
-                        rowGroupMode="subheader"
-                        groupRowsBy="representative.name"
-                        sortMode="single"
-                        sortField="representative.name"
-                        sortOrder={1}
-                        scrollable
-                        scrollHeight="400px"
-                        rowGroupHeaderTemplate={headerTemplate}
-                        rowGroupFooterTemplate={footerTemplate}
-                        responsiveLayout="scroll"
-                    >
-                        <Column field="name" header="Name" style={{ minWidth: '200px' }}></Column>
-                        <Column field="country" header="Country" body={countryBodyTemplate} style={{ minWidth: '200px' }}></Column>
-                        <Column field="company" header="Company" style={{ minWidth: '200px' }}></Column>
-                        <Column field="status" header="Status" body={statusBodyTemplate} style={{ minWidth: '200px' }}></Column>
-                        <Column field="date" header="Date" style={{ minWidth: '200px' }}></Column>
-                    </DataTable>
-                </div>
-            </div>
+        </div>
         </div>
     );
 };

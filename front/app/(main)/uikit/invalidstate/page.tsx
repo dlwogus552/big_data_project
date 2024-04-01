@@ -66,119 +66,16 @@ const InvalidStateDemo = () => {
     };
 
     return (
-        <div className="card">
-            <h5>Invalid State</h5>
-            <div className="grid p-fluid">
-                <div className="col-12 md:col-6">
-                    <div className="field mt-3">
-                        <label htmlFor="inputtext">InputText</label>
-                        <InputText
-                            type="text"
-                            id="inputtext"
-                            value={value1}
-                            onChange={(e) => setValue1(e.target.value)}
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="autocomplete">AutoComplete</label>
-                        <AutoComplete
-                            id="autocomplete"
-                            value={value2}
-                            onChange={(e) => setValue2(e.value)}
-                            suggestions={filteredCountries}
-                            completeMethod={searchCountry}
-                            field="name"
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="calendar">Calendar</label>
-                        <Calendar
-                            inputId="calendar"
-                            value={value3}
-                            onChange={onCalendarChange}
-                            className="p-invalid"
-                            showIcon
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="chips">Chips</label>
-                        <Chips
-                            inputId="chips"
-                            value={value4}
-                            onChange={(e) => setValue4(e.value ?? [])}
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="password">Password</label>
-                        <Password
-                            inputId="password"
-                            value={value5}
-                            onChange={(e) => setValue5(e.target.value)}
-                            className="p-invalid"
-                        />
-                    </div>
-                </div>
-
-                <div className="col-12 md:col-6">
-                    <div className="field mt-3">
-                        <label htmlFor="inputmask">InputMask</label>
-                        <InputMask
-                            id="inputmask"
-                            mask="99/99/9999"
-                            value={value6}
-                            onChange={(e) => setValue6(e.value ?? "")}
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="inputnumber">InputNumber</label>
-                        <InputNumber
-                            id="inputnumber"
-                            value={value7}
-                            onValueChange={(e) =>
-                                setValue7(e.target.value ?? 0)
-                            }
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="dropdown">Dropdown</label>
-                        <Dropdown
-                            id="dropdown"
-                            options={cities}
-                            value={value8}
-                            onChange={(e) => setValue8(e.value)}
-                            optionLabel="name"
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="multiselect">MultiSelect</label>
-                        <MultiSelect
-                            id="multiselect"
-                            options={cities}
-                            value={value9}
-                            onChange={(e) => setValue9(e.value)}
-                            optionLabel="name"
-                            className="p-invalid"
-                        />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="textarea">Textarea</label>
-                        <InputTextarea
-                            id="textarea"
-                            rows={3}
-                            cols={30}
-                            value={value10}
-                            onChange={(e) => setValue10(e.target.value)}
-                            className="p-invalid"
-                        />
-                    </div>
-                </div>
+        <div className="col-12">
+        <div className="card mb-0"  style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
+            <div className="flex justify-content-between mb-3"> 
+                <div style={{width: '100%'}}>
+                <a href="https://public.tableau.com/app/profile/.82985567/viz/kgTOP10_17116743538880/2?publish=yes">
+                    <img src="/layout/images/themes/국가별 고등어 수출량.png" alt="국가별 고등어 수출량" style={{ width: '100%', maxHeight: '100%', borderRadius: '10px' }} />
+                </a>    
+                </div>         
             </div>
+        </div>
         </div>
     );
 };
