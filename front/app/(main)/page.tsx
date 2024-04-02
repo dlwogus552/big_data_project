@@ -126,28 +126,25 @@ const Dashboard = () => {
     };
 
     return (
-            <div className="grid">
+        <div className="grid">
 
             <div className="col-12">
-    <div className="card mb-0"  style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
-        <div className="flex justify-content-between mb-3">
-            
-            <div style={{width: '100%'}}>
-                <img src="/layout/images/themes/고등어.jpg" alt="등어 이미지" style={{ width: '100%', maxHeight: '100%', borderRadius: '10px' }} />
-            </div>
-     
+                <div className="card mb-0" style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px', textAlign: 'center' }}>
+                    <div className="flex justify-content-between mb-3">
+                        <div style={{ width: '100%' }}>
+                            <img src="/layout/images/themes/고등어.jpg" alt="등어 이미지" style={{ width: '100%', maxHeight: '100%', borderRadius: '10px' }} />
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
 
 
-       
 
 
+            {/* 방문자 / 최저가 등등 */}
             <div className="col-12 lg:col-6 xl:col-3">
                 <div className="card mb-0">
-
                     <div className="flex justify-content-between mb-3">
                         <div>
                             <span className="block text-500 font-medium mb-3">오늘의 방문자</span>
@@ -206,7 +203,9 @@ const Dashboard = () => {
                     <span className="text-500">responded</span>
                 </div>
             </div>
+            {/* 방문자 / 최저가 끝 */}
 
+            {/* 랭크 */}
             <div className="col-12 xl:col-6">
                 <div className="card">
                     <h5>Rank</h5>
@@ -225,6 +224,8 @@ const Dashboard = () => {
                         />
                     </DataTable>
                 </div>
+                {/* 랭크 끝 */}
+                {/* 고등어가 가장 많이 잡히는 계절 */}
                 <div className="card">
                     <div className="flex justify-content-between align-items-center mb-5">
                         <h5>고등어가 가장 많이 잡히는 계절</h5>
@@ -289,17 +290,22 @@ const Dashboard = () => {
                                 <span className="text-green-500 ml-3 font-medium">%35</span>
                             </div>
                         </li>
-                        
+
                     </ul>
                 </div>
             </div>
+                {/* 고등어가 가장 많이 잡히는 계절 끝 */}
 
+            {/* 오른쪽 div */}
+                {/* 수입량 변화 */}
             <div className="col-12 xl:col-6">
                 <div className="card">
                     <h5>수입량의 변화</h5>
                     <Chart type="line" data={lineData} options={lineOptions} />
                 </div>
+                {/* 수입량 변화 끝 */}
 
+                {/* Notifications */}
                 <div className="card">
                     <div className="flex align-items-center justify-content-between mb-4">
                         <h5>Notifications</h5>
@@ -312,7 +318,7 @@ const Dashboard = () => {
                                     { label: 'Add New', icon: 'pi pi-fw pi-plus' },
                                     { label: 'Remove', icon: 'pi pi-fw pi-minus' }
                                 ]}
-                            />
+                                />
                         </div>
                     </div>
 
@@ -323,7 +329,7 @@ const Dashboard = () => {
                                 <i className="pi pi-dollar text-xl text-blue-500" />
                             </div>
                             <span className="text-900 line-height-3">
-                               
+
                                 <span className="text-700">
                                     {' '}
                                     고등어를 상온에서 하루이상 방치 후 섭취시 식중독에 걸릴 수 있습니다.
@@ -363,13 +369,15 @@ const Dashboard = () => {
                         </li>
                     </ul>
                 </div>
+                {/* Notifications */}
+                {/* md추천 */}
                 <div
                     className="px-4 py-5 shadow-2 flex flex-column md:flex-row md:align-items-center justify-content-between mb-3"
                     style={{
                         borderRadius: '1rem',
                         background: 'linear-gradient(0deg, rgba(0, 123, 255, 0.5), rgba(0, 123, 255, 0.5)), linear-gradient(92.54deg, #1C80CF 47.88%, #FFFFFF 100.01%)'
                     }}
-                >
+                    >
                     <div>
                         <div className="text-blue-100 font-medium text-xl mt-2 mb-3">MD 추천</div>
                         <div className="text-white font-medium text-5xl">고등어를 지금 바로 구입하세요</div>
@@ -380,7 +388,9 @@ const Dashboard = () => {
                         </Link>
                     </div>
                 </div>
+                {/* md추천 끝 */}
             </div>
+            {/* 오른쪽 div 끝 */}
         </div>
     );
 };

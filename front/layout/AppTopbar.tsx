@@ -24,7 +24,7 @@ const AppTopbar = forwardRef<AppTopbarRef>((props, ref) => {
                 {/* <img src={`/layout/images/logo-${layoutConfig.colorScheme !== 'light' ? 'white' : 'dark'}.svg`} width="47.22px" height={'35px'} alt="logo" /> */}
                 <img src={`/layout/images/logo.png`} width="47.22px" height={'35px'} alt="logo" />
                 {/* <img src="../public/images/logo.png" width="47.22px" height={'35px'} alt="logo" /> */}
-                <span><b>고등어 구이</b></span>
+                <span><b>모두의 고등어</b></span>
             </Link>
 
             <button ref={menubuttonRef} type="button" className="p-link layout-menu-button layout-topbar-button" onClick={onMenuToggle}>
