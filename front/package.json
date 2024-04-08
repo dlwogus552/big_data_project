@@ -9,6 +9,7 @@
     "format": "prettier --write \"{app,demo,layout,types}/**/*.{js,ts,tsx,d.ts}\"",
     "lint": "next lint"
   },
+  "proxy": "https://openapi.naver.com",
   "dependencies": {
     "@types/node": "20.3.1",
     "@types/react": "18.2.12",
