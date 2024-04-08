@@ -19,7 +19,7 @@ const AppMenu = () => {
             label: '고등어 정보',
             items: [
                 { label: '고등어 ', icon: 'pi pi-fw pi-id-card', to: '/test' },
-                { label: 'Ocean News', icon: 'pi pi-fw pi-check-square', to: '/pages/empty' },
+                { label: 'Ocean News', icon: 'pi pi-fw pi-check-square', to: '/uikit/news' },
             ]
         },
         {
