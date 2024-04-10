@@ -32,6 +32,7 @@ const AppMenu = () => {
                 { label: '국가별 고등어 수입량', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
                 { label: '지역별 고등어 생산량', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
                 { label: '고등어 구입 페이지', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
+                { label: '자주 묻는 질문', icon: 'pi pi-fw pi-question', to: '/uikit/qan' },
                 // { label: '오늘의 바다', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
                 // { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
                 // { label: 'Overlay', icon: 'pi pi-fw pi-clone', to: '/uikit/overlay' },
