@@ -27,8 +27,8 @@ const FormLayoutDemo = () => {
                     const items = result.response.body.items.item;
                     setWeatherData(items);
                 });
-            } catch (error) {
-                console.error('Error fetching data:', error);
+            } catch {
+                console.error('Error fetching data');
             }
         };
 
@@ -36,53 +36,53 @@ const FormLayoutDemo = () => {
     }, []);
 
     return (
-<div className="grid">
-    {/* 위쪽 3개 */}
-    <div className="col-20 md:col-10">
-        <div className="card p-fluid">
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {weatherData.slice(0, 3).map((item, index) => (
-                    <div key={index} style={{ flex: '0 0 33.33%', maxWidth: '33.33%', marginBottom: '20px' }}>
-                        <div style={{ backgroundColor: '#f9f9f9', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
-                            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>{item.siteName}🌊</h1>
-                            <p>상태: {item.sttusNm}</p>
-                            <p>1분 평균 풍속: {item.windSpeed1m} m/s</p>
-                            <p>10분 평균 풍속: {item.windSpeed10m} m/s</p>
-                            <p>돌풍 풍속: {item.windSpeedGust} m/s</p>
-                            <p>1분 평균 풍향: {item.windDirection1m} 도</p>
-                            <p>10분 평균 풍향: {item.windDirection10m} 도</p>
-                            <p>돌풍 풍향: {item.windDirectionGust} 도</p>
-                            <p>관측 시간: {item.obsrDt}</p>
-                        </div>
+        <div className="grid">
+            {/* 위쪽 3개 */}
+            <div className="col-20 md:col-10">
+                <div className="card p-fluid">
+                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        {weatherData.slice(0, 3).map((item, index) => (
+                            <div key={index} style={{ flex: '0 0 33.33%', maxWidth: '33.33%', marginBottom: '20px' }}>
+                                <div style={{ backgroundColor: '#f9f9f9', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
+                                    <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>{item.siteName}🌊</h1>
+                                    <p>상태: {item.sttusNm}</p>
+                                    <p>1분 평균 풍속: {item.windSpeed1m} m/s</p>
+                                    <p>10분 평균 풍속: {item.windSpeed10m} m/s</p>
+                                    <p>돌풍 풍속: {item.windSpeedGust} m/s</p>
+                                    <p>1분 평균 풍향: {item.windDirection1m} 도</p>
+                                    <p>10분 평균 풍향: {item.windDirection10m} 도</p>
+                                    <p>돌풍 풍향: {item.windDirectionGust} 도</p>
+                                    <p>관측 시간: {item.obsrDt}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
-        </div>
-    </div>
 
-    {/* 아래쪽 두개  */}
-    <div className="col-20 md:col-10">
-        <div className="card p-fluid">
-            <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {weatherData.slice(3).map((item, index) => (
-                    <div key={index} style={{ flex: '0 0 50%', maxWidth: '50%', marginBottom: '20px' }}>
-                        <div style={{ backgroundColor: '#f9f9f9', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
-                            <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>{item.siteName}🌊</h1>
-                            <p>상태: {item.sttusNm}</p>
-                            <p>1분 평균 풍속: {item.windSpeed1m} m/s</p>
-                            <p>10분 평균 풍속: {item.windSpeed10m} m/s</p>
-                            <p>돌풍 풍속: {item.windSpeedGust} m/s</p>
-                            <p>1분 평균 풍향: {item.windDirection1m} 도</p>
-                            <p>10분 평균 풍향: {item.windDirection10m} 도</p>
-                            <p>돌풍 풍향: {item.windDirectionGust} 도</p>
-                            <p>관측 시간: {item.obsrDt}</p>
-                        </div>
+            {/* 아래쪽 두개  */}
+            <div className="col-20 md:col-10">
+                <div className="card p-fluid">
+                    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                        {weatherData.slice(3).map((item, index) => (
+                            <div key={index} style={{ flex: '0 0 50%', maxWidth: '50%', marginBottom: '20px' }}>
+                                <div style={{ backgroundColor: '#f9f9f9', borderRadius: '5px', boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', padding: '20px' }}>
+                                    <h1 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '10px' }}>{item.siteName}🌊</h1>
+                                    <p>상태: {item.sttusNm}</p>
+                                    <p>1분 평균 풍속: {item.windSpeed1m} m/s</p>
+                                    <p>10분 평균 풍속: {item.windSpeed10m} m/s</p>
+                                    <p>돌풍 풍속: {item.windSpeedGust} m/s</p>
+                                    <p>1분 평균 풍향: {item.windDirection1m} 도</p>
+                                    <p>10분 평균 풍향: {item.windDirection10m} 도</p>
+                                    <p>돌풍 풍향: {item.windDirectionGust} 도</p>
+                                    <p>관측 시간: {item.obsrDt}</p>
+                                </div>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
     );
 };

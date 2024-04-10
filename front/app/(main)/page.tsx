@@ -12,12 +12,14 @@ import Link from 'next/link';
 import { Demo } from '@/types';
 import { ChartData, ChartOptions } from 'chart.js';
 import axios from "axios";
-
+const CLINET_ID = 'XoQrvN3hV75fuokQmCxd';
+const CLINET_PW = 'tnt1sKbqf9';
+const BASE_PATH = "/v1/search/news.json?query=고등어";
 const lineData: ChartData = {
     labels: ['Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct'],
     datasets: [
         {
-            label: '생산량 (1,000kg)',
+            label: '생산량 (1,000t)',
             data: [3, 5, 0, 8, 15, 20, 33],
             fill: false,
             backgroundColor: '#2f4860',
@@ -42,6 +44,26 @@ const Dashboard = () => {
     const [lineOptions, setLineOptions] = useState<ChartOptions>({});
     const { layoutConfig } = useContext(LayoutContext);
 
+    const [newsList, setNewsList] = useState([])
+    useEffect(() => {
+        axios.get(`${BASE_PATH}`, {
+            params: {
+                sort: "sim",
+                display: "3",
+                start: '1'
+            },
+            headers: {
+                "X-Requested-With": "XMLHttpRequest",
+                "X-Naver-Client-Id": CLINET_ID,
+                "X-Naver-Client-Secret": CLINET_PW,
+            }
+        }).then((response) => {
+            console.log('성공')
+            setNewsList(response.data.items)
+        }).catch((error) => {
+            console.error('오류 발생', error.status)
+        })
+    }, []);
     const applyLightTheme = () => {
         const lineOptions: ChartOptions = {
             plugins: {
@@ -219,7 +241,7 @@ const Dashboard = () => {
                     <div className="flex justify-content-between align-items-center mb-5">
                         <h5>TOP 3 고등어 수입국 (2015년 ~ 2023년 기준)</h5>
                         <div>
-                            <Button type="button" icon="pi pi-ellipsis-v" rounded text className="p-button-plain" onClick={(event) => menu1.current?.toggle(event)} />
+                            {/* <Button type="button" icon="pi pi-ellipsis-v" rounded text className="p-button-plain" onClick={(event) => menu1.current?.toggle(event)} />
                             <Menu
                                 ref={menu1}
                                 popup
@@ -227,7 +249,7 @@ const Dashboard = () => {
                                     { label: 'Add New', icon: 'pi pi-fw pi-plus' },
                                     { label: 'Remove', icon: 'pi pi-fw pi-minus' }
                                 ]}
-                            />
+                            /> */}
                         </div>
                     </div>
                     <ul className="list-none p-0 m-0">
@@ -286,7 +308,7 @@ const Dashboard = () => {
                     <div className="flex align-items-center justify-content-between mb-4">
                         <h5>Notifications</h5>
                         <div>
-                            <Button type="button" icon="pi pi-ellipsis-v" rounded text className="p-button-plain" onClick={(event) => menu2.current?.toggle(event)} />
+                            {/* <Button type="button" icon="pi pi-ellipsis-v" rounded text className="p-button-plain" onClick={(event) => menu2.current?.toggle(event)} />
                             <Menu
                                 ref={menu2}
                                 popup
@@ -294,32 +316,24 @@ const Dashboard = () => {
                                     { label: 'Add New', icon: 'pi pi-fw pi-plus' },
                                     { label: 'Remove', icon: 'pi pi-fw pi-minus' }
                                 ]}
-                                />
+                                /> */}
                         </div>
                     </div>
 
                     <span className="block text-600 font-medium mb-3">TODAY</span>
                     <ul className="p-0 mx-0 mt-0 mb-4 list-none">
-                        <li className="flex align-items-center py-2 border-bottom-1 surface-border">
-                            <div className="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
-                                <i className="pi pi-dollar text-xl text-blue-500" />
-                            </div>
-                            <span className="text-900 line-height-3">
-
-                                <span className="text-700">
-                                    {' '}
-                                    고등어를 상온에서 하루이상 방치 후 섭취시 식중독에 걸릴 수 있습니다.
-                                </span>
-                            </span>
-                        </li>
-                        <li className="flex align-items-center py-2">
-                            <div className="w-3rem h-3rem flex align-items-center justify-content-center bg-orange-100 border-circle mr-3 flex-shrink-0">
-                                <i className="pi pi-download text-xl text-orange-500" />
-                            </div>
-                            <span className="text-700 line-height-3">
-                                소화기능이 떨어진 후 섭취시 소화시키는데 어려움이 있을 수 있습니다.
-                            </span>
-                        </li>
+                    {newsList.map((news, i) => {
+                            return (
+                                <li className="flex align-items-center py-2 border-bottom-1 surface-border">
+                                    <span className="text-900 line-height-3">
+                                        <Link href={news.link}>
+                                        <span style={{color:'black',fontSize:20}}dangerouslySetInnerHTML={{__html:news.title}}>
+                                        </span>
+                                        </Link>
+                                    </span>
+                                </li>
+                            )
+                        })}
                     </ul>
 
                     {/* <span className="block text-600 font-medium mb-3">YESTERDAY</span>
