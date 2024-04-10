@@ -3,62 +3,41 @@
 		{
 			"id": "1000",
 			"code": "f230fh0g3",
-			"name": "동해안",
-			"description": "Product Description",
+			"name": "부산광역시",
 			"image": "동해안.jpg",
-			"price": 2,
-			"category": "Accessories",
-			"quantity": 24,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
+			"price": 91153
 		},
 		{
 			"id": "1001",
 			"code": "nvklal433",
-			"name": "서해안(인천)",
+			"name": "경상남도",
 			"description": "Product Description",
 			"image": "서해안.jpg",
-			"price": 1.8,
-			"category": "Accessories",
-			"quantity": 61,
-			"inventoryStatus": "INSTOCK",
-			"rating": 4
+			"price": 7614
 		},
 		{
 			"id": "1002",
 			"code": "zz21cz3c1",
-			"name": "제주도",
+			"name": "경상북도",
 			"description": "Product Description",
 			"image": "제주도.jpg",
-			"price": 1.4,
-			"category": "Fitness",
-			"quantity": 2,
-			"inventoryStatus": "LOWSTOCK",
-			"rating": 3
+			"price": 4537
 		},
 		{
 			"id": "1003",
-			"code": "244wgerg2",
-			"name": "남해안",
+			"code": "zz21cz3c1",
+			"name": "전라남도",
 			"description": "Product Description",
-			"image": "남해안.jpg",
-			"price": 1.2,
-			"category": "Clothing",
-			"quantity": 25,
-			"inventoryStatus": "INSTOCK",
-			"rating": 5
+			"image": "제주도.jpg",
+			"price": 3876
 		},
 		{
 			"id": "1004",
-			"code": "h456wer53",
-			"name": "서해안(경상)",
+			"code": "244wgerg2",
+			"name": "제주도",
 			"description": "Product Description",
-			"image": "부산 서해안.jpg",
-			"price": 0.8,
-			"category": "Accessories",
-			"quantity": 73,
-			"inventoryStatus": "INSTOCK",
-			"rating": 4
+			"image": "남해안.jpg",
+			"price": 3650
 		}
 	]
 }

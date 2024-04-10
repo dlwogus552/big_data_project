@@ -18,20 +18,20 @@ const AppMenu = () => {
         {
             label: '고등어 정보',
             items: [
-                { label: '고등어 ', icon: 'pi pi-fw pi-id-card', to: '/test' },
-                { label: 'Ocean News', icon: 'pi pi-fw pi-check-square', to: '/uikit/news' },
+                { label: '고등어 백과', icon: 'pi pi-fw pi-id-card', to: '/test' },
+                { label: '고등어 News', icon: 'pi pi-fw pi-check-square', to: '/uikit/news' },
             ]
         },
         {
             label: '요인',
             items: [
                 { label: '오늘의 바다', icon: 'pi pi-fw pi-id-card', to: '/uikit/formlayout' },
-                { label: '풍량', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
+                // { label: '풍량', icon: 'pi pi-fw pi-check-square', to: '/uikit/input' },
                 // { label: '풍속', icon: 'pi pi-fw pi-bookmark', to: '/uikit/floatlabel' },
                 { label: '국가별 고등어 수출량', icon: 'pi pi-fw pi-exclamation-circle', to: '/uikit/invalidstate' },
                 { label: '국가별 고등어 수입량', icon: 'pi pi-fw pi-mobile', to: '/uikit/button', class: 'rotated-icon' },
                 { label: '지역별 고등어 생산량', icon: 'pi pi-fw pi-table', to: '/uikit/table' },
-                { label: '고등어 구입 페이지', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
+                // { label: '고등어 구입 페이지', icon: 'pi pi-fw pi-list', to: '/uikit/list' },
                 { label: '자주 묻는 질문', icon: 'pi pi-fw pi-question', to: '/uikit/qan' },
                 // { label: '오늘의 바다', icon: 'pi pi-fw pi-share-alt', to: '/uikit/tree' },
                 // { label: 'Panel', icon: 'pi pi-fw pi-tablet', to: '/uikit/panel' },
@@ -186,9 +186,9 @@ const AppMenu = () => {
                     return !item?.seperator ? <AppMenuitem item={item} root={true} index={i} key={item.label} /> : <li className="menu-separator"></li>;
                 })}
 
-                <Link href="https://blocks.primereact.org" target="_blank" style={{ cursor: 'pointer' }}>
+                {/* <Link href="https://blocks.primereact.org" target="_blank" style={{ cursor: 'pointer' }}>
                     <img alt="Prime Blocks" className="w-full mt-3" src={`/layout/images/banner-primeblocks${layoutConfig.colorScheme === 'light' ? '' : '-dark'}.png`} />
-                </Link>
+                </Link> */}
             </ul>
         </MenuProvider>
     );

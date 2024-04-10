@@ -14,19 +14,19 @@ import { ChartData, ChartOptions } from 'chart.js';
 import axios from "axios";
 
 const lineData: ChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+    labels: ['Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct'],
     datasets: [
         {
-            label: 'First Dataset',
-            data: [65, 59, 80, 81, 56, 55, 40],
+            label: '생산량 (1,000kg)',
+            data: [3, 5, 0, 8, 15, 20, 33],
             fill: false,
             backgroundColor: '#2f4860',
             borderColor: '#2f4860',
             tension: 0.4
         },
         {
-            label: 'Second Dataset',
-            data: [28, 48, 40, 19, 86, 27, 90],
+            label: '가격 (100원)',
+            data: [21, 22, 25, 21, 19, 18, 16],
             fill: false,
             backgroundColor: '#00bb7e',
             borderColor: '#00bb7e',
@@ -143,92 +143,81 @@ const Dashboard = () => {
 
 
             {/* 방문자 / 최저가 등등 */}
-            <div className="col-12 lg:col-6 xl:col-3">
+            <div className="col-12 lg:col-6 xl:col-4">
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">오늘의 방문자</span>
-                            <div className="text-900 font-medium text-xl">152</div>
+                            <span className="block text-500 font-medium mb-3">이달의 고등어(中) 예측 가격</span>
+                            <div className="text-900 font-medium text-xl">2,200원</div>
                         </div>
-                        <div className="flex align-items-center justify-content-center bg-blue-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
-                            <i className="pi pi-shopping-cart text-blue-500 text-xl" />
-                        </div>
+                        {/* <div className="flex align-items-center justify-content-center bg-blue-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
+                            <i className="pi pi-dollar text-xl text-blue-500 text-xl" />
+                        </div> */}
                     </div>
-                    <span className="text-green-500 font-medium">24 new </span>
-                    <span className="text-500">회원가입</span>
+                    {/* <span className="text-green-500 font-medium">24 new </span>
+                    <span className="text-500">회원가입</span> */}
                 </div>
             </div>
-            <div className="col-12 lg:col-6 xl:col-3">
+            <div className="col-12 lg:col-6 xl:col-4">
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">이달의 최저가</span>
-                            <div className="text-900 font-medium text-xl">$2.100</div>
+                            <span className="block text-500 font-medium mb-3">전월 대비 증감률</span>
+                            <div className="text-900 font-medium text-xl">🔽2.64%</div>
                         </div>
-                        <div className="flex align-items-center justify-content-center bg-orange-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
-                            <i className="pi pi-map-marker text-orange-500 text-xl" />
-                        </div>
+                        {/* <div className="flex align-items-center justify-content-center bg-orange-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}> */}
+                            {/* <i className="pi pi-map-marker text-orange-500 text-xl" /> */}
+                        {/* </div> */}
                     </div>
-                    <span className="text-green-500 font-medium">%52+ </span>
-                    <span className="text-500">since last week</span>
+                    {/* <span className="text-green-500 font-medium">%52+ </span>
+                    <span className="text-500">since last week</span> */}
                 </div>
             </div>
-            <div className="col-12 lg:col-6 xl:col-3">
+            {/* <div className="col-12 lg:col-6 xl:col-3">
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">일일 어획량</span>
-                            <div className="text-900 font-medium text-xl">28441</div>
+                            <span className="block text-500 font-medium mb-3">전일 고등어 소매가격(大)</span>
+                            <div className="text-900 font-medium text-xl">3,740원</div>
                         </div>
                         <div className="flex align-items-center justify-content-center bg-cyan-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
-                            <i className="pi pi-inbox text-cyan-500 text-xl" />
+                        <i className="pi pi-dollar text-xl text-blue-500 text-xl" />
                         </div>
                     </div>
-                    <span className="text-green-500 font-medium">520 </span>
-                    <span className="text-500">newly registered</span>
                 </div>
-            </div>
-            <div className="col-12 lg:col-6 xl:col-3">
+            </div> */}
+            <div className="col-12 lg:col-6 xl:col-4">
                 <div className="card mb-0">
                     <div className="flex justify-content-between mb-3">
                         <div>
-                            <span className="block text-500 font-medium mb-3">구입요청</span>
-                            <div className="text-900 font-medium text-xl">152 Unread</div>
+                            <span className="block text-500 font-medium mb-3">전월의 고등어(中) 가격</span>
+                            <div className="text-900 font-medium text-xl">2,142원</div>
                         </div>
-                        <div className="flex align-items-center justify-content-center bg-purple-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
-                            <i className="pi pi-comment text-purple-500 text-xl" />
-                        </div>
+                        {/* <div className="flex align-items-center justify-content-center bg-purple-100 border-round" style={{ width: '2.5rem', height: '2.5rem' }}>
+                        <i className="pi pi-dollar text-xl text-blue-500 text-xl" />
+                        </div> */}
                     </div>
-                    <span className="text-green-500 font-medium">85 </span>
-                    <span className="text-500">responded</span>
+                    {/* <span className="text-green-500 font-medium">85 </span>
+                    <span className="text-500">responded</span> */}
                 </div>
             </div>
             {/* 방문자 / 최저가 끝 */}
 
-            {/* 랭크 */}
+            {/* 지역별 고등어 생산량 */}
             <div className="col-12 xl:col-6">
                 <div className="card">
-                    <h5>Rank</h5>
+                    <h5>지역별 고등어 생산량 (2023년 기준)</h5>
                     <DataTable value={products} rows={5} paginator responsiveLayout="scroll">
                         <Column header="Image" body={(data) => <img className="shadow-2" src={`/demo/images/product/${data.image}`} alt={data.image} width="50" />} />
                         <Column field="name" header="Name" sortable style={{ width: '35%' }} />
-                        <Column field="price" header="t(month)" sortable style={{ width: '35%' }} body={(data) => formatCurrency(data.price)} />
-                        <Column
-                            header="View"
-                            style={{ width: '15%' }}
-                            body={() => (
-                                <>
-                                    <Button icon="pi pi-search" text />
-                                </>
-                            )}
-                        />
+                        <Column field="price" header="생산량" sortable style={{ width: '35%' }} />
                     </DataTable>
                 </div>
-                {/* 랭크 끝 */}
+                {/* 지역별 고등어 생산량 끝 */}
                 {/* 고등어가 가장 많이 잡히는 계절 */}
                 <div className="card">
                     <div className="flex justify-content-between align-items-center mb-5">
-                        <h5>고등어가 가장 많이 잡히는 계절</h5>
+                        <h5>TOP 3 고등어 수입국 (2015년 ~ 2023년 기준)</h5>
                         <div>
                             <Button type="button" icon="pi pi-ellipsis-v" rounded text className="p-button-plain" onClick={(event) => menu1.current?.toggle(event)} />
                             <Menu
@@ -244,53 +233,40 @@ const Dashboard = () => {
                     <ul className="list-none p-0 m-0">
                         <li className="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
                             <div>
-                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">여름</span>
-                                <div className="mt-1 text-600">6~7월</div>
+                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">노르웨이</span>
+                                <div className="mt-1 text-600">365,363,352kg</div>
                             </div>
                             <div className="mt-2 md:mt-0 flex align-items-center">
                                 <div className="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" style={{ height: '8px' }}>
-                                    <div className="bg-orange-500 h-full" style={{ width: '50%' }} />
+                                    <div className="bg-orange-500 h-full" style={{ width: '88.71%' }} />
                                 </div>
-                                <span className="text-orange-500 ml-3 font-medium">%50</span>
+                                <span className="text-orange-500 ml-3 font-medium">88.71%</span>
                             </div>
                         </li>
                         <li className="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
                             <div>
-                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">봄</span>
-                                <div className="mt-1 text-600">3~4월</div>
+                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">중국</span>
+                                <div className="mt-1 text-600">36,394,652kg</div>
                             </div>
                             <div className="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
                                 <div className="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" style={{ height: '8px' }}>
-                                    <div className="bg-cyan-500 h-full" style={{ width: '16%' }} />
+                                    <div className="bg-cyan-500 h-full" style={{ width: '8.83%' }} />
                                 </div>
-                                <span className="text-cyan-500 ml-3 font-medium">%16</span>
+                                <span className="text-cyan-500 ml-3 font-medium">8.83%</span>
                             </div>
                         </li>
                         <li className="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
                             <div>
-                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">겨울</span>
-                                <div className="mt-1 text-600">12~1</div>
+                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">러시아</span>
+                                <div className="mt-1 text-600">9,901,250kg</div>
                             </div>
                             <div className="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
                                 <div className="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" style={{ height: '8px' }}>
-                                    <div className="bg-pink-500 h-full" style={{ width: '67%' }} />
+                                    <div className="bg-pink-500 h-full" style={{ width: '2.40%' }} />
                                 </div>
-                                <span className="text-pink-500 ml-3 font-medium">%67</span>
+                                <span className="text-pink-500 ml-3 font-medium">2.40%</span>
                             </div>
                         </li>
-                        <li className="flex flex-column md:flex-row md:align-items-center md:justify-content-between mb-4">
-                            <div>
-                                <span className="text-900 font-medium mr-2 mb-1 md:mb-0">가을</span>
-                                <div className="mt-1 text-600">9~10</div>
-                            </div>
-                            <div className="mt-2 md:mt-0 ml-0 md:ml-8 flex align-items-center">
-                                <div className="surface-300 border-round overflow-hidden w-10rem lg:w-6rem" style={{ height: '8px' }}>
-                                    <div className="bg-green-500 h-full" style={{ width: '35%' }} />
-                                </div>
-                                <span className="text-green-500 ml-3 font-medium">%35</span>
-                            </div>
-                        </li>
-
                     </ul>
                 </div>
             </div>
@@ -300,7 +276,7 @@ const Dashboard = () => {
                 {/* 수입량 변화 */}
             <div className="col-12 xl:col-6">
                 <div className="card">
-                    <h5>수입량의 변화</h5>
+                    <h5>올해의 고등어 생산량 & 가격 예측</h5>
                     <Chart type="line" data={lineData} options={lineOptions} />
                 </div>
                 {/* 수입량 변화 끝 */}
@@ -346,7 +322,7 @@ const Dashboard = () => {
                         </li>
                     </ul>
 
-                    <span className="block text-600 font-medium mb-3">YESTERDAY</span>
+                    {/* <span className="block text-600 font-medium mb-3">YESTERDAY</span>
                     <ul className="p-0 m-0 list-none">
                         <li className="flex align-items-center py-2 border-bottom-1 surface-border">
                             <div className="w-3rem h-3rem flex align-items-center justify-content-center bg-blue-100 border-circle mr-3 flex-shrink-0">
@@ -367,7 +343,7 @@ const Dashboard = () => {
                                 <span className="text-700">구매 시 신선한 고등어를 구매하고 잡은 즉시 피를 빼주는 게 좋습니다.</span>
                             </span>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
                 {/* Notifications */}
                 {/* md추천 */}

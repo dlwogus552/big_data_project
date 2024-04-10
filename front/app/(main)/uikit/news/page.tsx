@@ -8,10 +8,6 @@ const CLINET_PW = 'tnt1sKbqf9';
 const BASE_PATH = "/v1/search/news.json?query=고등어";
 
 const NewsPage = () => {
-    const onClick = (link) => {
-        console.log(link)
-        window.open(link, '_blank')
-    }
     const [newsList, setNewsList] = useState([])
     useEffect(() => {
         axios.get(`${BASE_PATH}`, {
@@ -38,9 +34,11 @@ const NewsPage = () => {
             {newsList.map((news, i) => {
                 return (
                     <div className="col-12" key={i}>
-                        <div onClick={()=>onClick(news.link)} style={{ textAlign: 'center' }} className="card">
+                        <div  style={{ textAlign: 'center' }} className="card">
+                            <Link href={news.link}>
                             <h4 dangerouslySetInnerHTML={{ __html: news.title }} key={i} />
-                            <div dangerouslySetInnerHTML={{ __html: news.description.substring(0,100) }} />
+                            <div style={{color:'blue'}} dangerouslySetInnerHTML={{ __html: news.description.substring(0,100) }} />
+                            </Link>
                         </div>
                     </div>
 
