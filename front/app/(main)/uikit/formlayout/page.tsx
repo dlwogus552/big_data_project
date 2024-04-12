@@ -27,8 +27,8 @@ const FormLayoutDemo = () => {
                     const items = result.response.body.items.item;
                     setWeatherData(items);
                 });
-            } catch {
-                console.error('Error fetching data');
+            } catch (err){
+                console.error('Error fetching data',err);
             }
         };
 
